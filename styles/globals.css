@@ -1,0 +1,22 @@
+/* Left globals in case we want some */
+/* Put custom css underneath @tailwind */
+/* You also need to swap out the tailwind css import 
+   in the _app.js component and import this one 
+   instead
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.current-page {
+  text-decoration: underline;
+}
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  transform: translate(0) scale(1);
+  visibility: visible;
+}
+.text-last-center{
+  text-align-last: center;
+}
