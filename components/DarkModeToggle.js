@@ -1,7 +1,19 @@
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+      setIsMounted(true);
+  }, []);
+  const switchTheme = () => {
+      if (isMounted) {
+          setTheme(theme === "light" ? "dark" : "light");
+      }
+  };
+
 
   const darkIcon = (
     <svg
@@ -42,7 +54,7 @@ export const DarkModeToggle = () => {
     <div
       className="flex justify-center items-center text-md text-white lg:text-current px-3 w-full h-12 py-2 rounded bg-blue-700 font-bold hover:bg-blue-800 lg:mt-0 lg:bg-transparent lg:hover:bg-transparent cursor-pointer"
       aria-label="dark mode toggle"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={switchTheme}
     >
       <div className="w-5 h-5">{currentIcon}</div>
     </div>
