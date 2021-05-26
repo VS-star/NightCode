@@ -193,7 +193,7 @@ export const Navbar = ({ currentPage }) => {
             </Link>
 
             <Link href="/free-trial">
-              <p className="w-full lg:min-w-max block text-sm  px-3 py-3 rounded text-white dark:text-white bg-blue-700 font-bold mt-2 hover:bg-blue-800 lg:ml-1 lg:mt-0 cursor-pointer">
+              <p className="w-full trial-button-width block text-sm  px-3 py-3 rounded text-white dark:text-white bg-blue-700 font-bold mt-2 hover:bg-blue-800 lg:ml-1 lg:mt-0 cursor-pointer">
                 {/* <span className="lg:hidden xl:inline">Start </span> */}
                 Free Trial
               </p>

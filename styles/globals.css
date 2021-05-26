@@ -20,3 +20,6 @@
 .text-last-center{
   text-align-last: center;
 }
+.trial-button-width{
+  min-width: 90px;
+}
