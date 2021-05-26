@@ -119,7 +119,7 @@ export const Navbar = ({ currentPage }) => {
             </Link> */}
             <Link href="/pages/page1">
               <p
-                className={` lg:border-r-2 lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20   ${
+                className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20   ${
                   navActive === NAV.PAGE_1 ? "text-blue-700 " : ""
                 }block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer  border-b-2 mt-6 `}
               >
@@ -128,7 +128,7 @@ export const Navbar = ({ currentPage }) => {
             </Link>
             <Link href="/pages/page2">
               <p
-                className={` lg:border-r-2 lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
+                className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
                   navActive === NAV.PAGE_2 ? "text-blue-700 " : ""
                 }
                 block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
@@ -138,7 +138,7 @@ export const Navbar = ({ currentPage }) => {
             </Link>
             <Link href="/pages/page3">
               <p
-                className={` lg:border-r-2 lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
+                className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
                   navActive === NAV.PAGE_3 ? "text-blue-700 " : ""
                 }block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
               >
