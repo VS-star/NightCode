@@ -19,7 +19,7 @@ export default function Page3() {
       </Head>
 
       <Navbar currentPage={currentPage} />
-      <div className="h-screen text-center"><p className="text-xl font-semibold text-white">Page3</p></div>
+      <div className="h-screen text-center"><p className="text-xl font-semibold  text-blue-700 dark:text-white">Page3</p></div>
       <ScrollToTop />
       <Footer />
     </>

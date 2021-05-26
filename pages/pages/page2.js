@@ -19,7 +19,7 @@ export default function Page2() {
       </Head>
 
       <Navbar currentPage={currentPage} />
-      <div className="h-screen text-center"><p className="text-xl font-semibold text-white">Page2</p></div>
+      <div className="h-screen text-center"><p className="text-xl font-semibold  text-blue-700 dark:text-white">Page2</p></div>
       <ScrollToTop />
       <Footer />
     </>

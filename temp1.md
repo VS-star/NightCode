@@ -1,24 +1,24 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { DarkModeToggle } from "../components/DarkModeToggle";
-import { blogs } from "../constants";
-import { Languages } from "../constants/Languages";
+import { DarkModeToggle } from "./components/DarkModeToggle";
+import { blogs } from "./constants";
+import { Languages } from "./constants/Languages";
 
 const SearchBox = () => {
   return (
-    <div className="relative mx-auto mt-4 lg:mt-0 text-gray-600 dark:text-gray-600 block">
+    <div className="relative mx-auto mt-4 lg:mt-0 text-gray-600 dark:text-gray-300 block">
       <input
-        className="border-2 mr-2 border-gray-300 h-10 w-full lg:w-36 pl-4 pr-2 rounded-full text-sm focus:outline-none bg-gray-300"
+        className="border-2 mr-4 border-gray-300 h-10 w-full lg:w-auto pl-2 pr-8 rounded-lg text-sm focus:outline-none bg-white"
         type="search"
         name="search"
         placeholder="Search"
       />
       <button
         type="submit"
-        className="absolute right-0 top-0 mt-3 mr-3 lg:mr-4"
+        className="absolute right-0 top-0 mt-3 mr-3 lg:mr-6"
       >
         <svg
-          className="text-gray-600 dark:text-gray-600 h-4 w-4 fill-current"
+          className="text-gray-600 dark:text-gray-300 h-4 w-4 fill-current"
           xmlns="https://www.w3.org/2000/svg"
           version="1.1"
           id="Capa_1"
@@ -36,19 +36,19 @@ const SearchBox = () => {
 };
 
 const NAV = {
-  HOME: "home",
-  PAGE_1: "#1",
-  PAGE_2: "#2",
-  PAGE_3: "#3",
-  BLOG: "blog",
-};
+  HOME: 'home',
+  PAGE_1: '#1',
+  PAGE_2: '#2',
+  PAGE_3: '#3',
+  BLOG: 'blog'
+}
 
 // Push new Blog here
 const blogItems = [
-  { value: blogs[1], name: "Blog 1" },
-  { value: blogs[2], name: "Blog 2" },
-  { value: blogs[3], name: "Blog 3" },
-];
+  { value: blogs[1], name: 'Blog 1' },
+  { value: blogs[2], name: 'Blog 2' },
+  { value: blogs[3], name: 'Blog 3' },
+]
 
 export const Navbar = ({ currentPage }) => {
   const [navActive, setNavActive] = useState(null);
@@ -58,7 +58,7 @@ export const Navbar = ({ currentPage }) => {
     const getCurrentPage = () => {
       let page = null;
       switch (true) {
-        case currentPage.includes("blog-"):
+        case currentPage.includes('blog-'):
           page = NAV.BLOG;
           break;
         default:
@@ -66,17 +66,17 @@ export const Navbar = ({ currentPage }) => {
           break;
       }
       setNavActive(page);
-    };
+    }
     if (currentPage) getCurrentPage();
   }, [currentPage]);
 
   return (
     <nav className="sticky inset-0 z-20 bg-white dark:bg-gray-900 py-4 shadow border-solid border-t-2 border-blue-700">
-      <div className="w-full lg:container lg:mx-auto lg:flex lg:px-4 items-center justify-between">
+      <div className="w-full lg:container lg:mx-auto lg:flex lg:px-8 items-center justify-between">
         <div className="container mx-auto flex justify-between w-full px-8 pb-5 lg:pb-0 lg:px-0 lg:w-auto">
           <div className="pl-1 lg:pl-0 flex items-center flex-shrink-0 text-gray-800 dark:text-gray-100 cursor-pointer">
             <Link href="/">
-              <img className="w-60" src="/logo.svg"/>
+              <img src="/logo.svg" height={30} width={200} />
             </Link>
           </div>
           <div
@@ -104,11 +104,10 @@ export const Navbar = ({ currentPage }) => {
         </div>
 
         <div
-          className={`${
-            mobileNavOpen ? "" : "hidden "
-          }menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:pl-3 lg:pr-0 px-8`}
+          className={`${mobileNavOpen ? "" : "hidden "
+            }menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:pl-3 lg:pr-0 px-8`}
         >
-          <div className="min-w-max text-sm  font-bold text-gray-700 dark:text-blue-300 lg:flex-grow">
+          <div className="text-sm  font-bold text-gray-700 dark:text-blue-300 lg:flex-grow">
             {/* <Link href="/">
               <p
                 className={`${navActive === NAV.HOME ? "text-blue-700 " : ""
@@ -119,37 +118,32 @@ export const Navbar = ({ currentPage }) => {
             </Link> */}
             <Link href="/pages/page1">
               <p
-                className={` lg:border-r-2 lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20   ${
-                  navActive === NAV.PAGE_1 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer  border-b-2 mt-6 `}
+                className={` lg:border-r-2 border-gray-200 border-opacity-20 ${navActive === NAV.PAGE_1 ? "text-blue-700 " : ""
+                  }block mt-4 lg:inline-block lg:mt-0 px-2 py-2  mr-1 hover:text-blue-700 cursor-pointer`}
               >
                 Page 1
               </p>
             </Link>
             <Link href="/pages/page2">
               <p
-                className={` lg:border-r-2 lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
-                  navActive === NAV.PAGE_2 ? "text-blue-700 " : ""
-                }
-                block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
+                className={` lg:border-r-2 border-gray-200 border-opacity-20 ${navActive === NAV.PAGE_2 ? "text-blue-700 " : ""
+                  }block mt-4 lg:inline-block lg:mt-0 px-2 py-2 mr-1 hover:text-blue-700 cursor-pointer`}
               >
                 Page 2
               </p>
             </Link>
             <Link href="/pages/page3">
               <p
-                className={` lg:border-r-2 lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
-                  navActive === NAV.PAGE_3 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
+                className={` lg:border-r-2 border-gray-200 border-opacity-20 ${navActive === NAV.PAGE_3 ? "text-blue-700 " : ""
+                  }block mt-4 lg:inline-block lg:mt-0 px-2 py-2 mr-1 hover:text-blue-700 cursor-pointer`}
               >
                 Page 3
               </p>
             </Link>
             <Link href="/pages/page4">
               <p
-                className={` lg:py-2 lg:mb-0 ${
-                  navActive === NAV.PAGE_4 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer mb-6`}
+                className={`${navActive === NAV.PAGE_4 ? "text-blue-700 " : ""
+                  }block mt-4 lg:inline-block lg:mt-0 px-2 py-2 mr-1 hover:text-blue-700 cursor-pointer`}
               >
                 Page 4
               </p>
@@ -210,26 +204,15 @@ export const Navbar = ({ currentPage }) => {
 
           {/* Edit margin right: lg:mr-2 */}
           <div className="relative w-full lg:w-auto mx-auto mt-4 lg:mt-0 inline-flex">
-            <svg
-              className="w-2 h-2 absolute top-0 right-0 m-4 mr-3 pointer-events-none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 412 232"
-            >
-              <path
-                d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
-                fill="#648299"
-                fillRule="nonzero"
-              />
-            </svg>
-            <select className="text-sm w-full lg:min-w-max border-2 border-gray-300 rounded-full text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
+            <svg className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232">
+              <path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fillRule="nonzero" /></svg>
+            <select className="text-sm w-full border-2 border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none text-last-center">
               {Languages.map((item, index) => (
-                <option key={index} className="px-4 py-4">
-                  {item}
-                </option>
+                <option key={index} className='px-4 py-4'>{item}</option>
               ))}
             </select>
           </div>
-          <div className="mt-2 lg:mt-0 lg:mr-2">
+          <div className="mt-4 lg:mt-0 lg:mr-2">
             <DarkModeToggle />
           </div>
           <div className="hidden lg:block">
@@ -238,20 +221,19 @@ export const Navbar = ({ currentPage }) => {
 
           <div className="text-center lg:flex">
             <Link href="/sign-in">
-              <p className="w-full lg:min-w-max block text-sm  px-3 py-3 dark:text-blue-300 font-bold mt-2 hover:text-blue-700 dark:hover:text-blue-700 lg:mt-0 cursor-pointer">
+              <p className="block text-sm  px-3 py-2 dark:text-blue-300 font-bold mt-4 hover:text-blue-700 dark:hover:text-blue-700 lg:mt-0 cursor-pointer">
                 Sign in
               </p>
             </Link>
 
             <Link href="/free-trial">
-              <p className="w-full lg:min-w-max block text-sm  px-3 py-3 rounded text-white dark:text-white bg-blue-700 font-bold mt-2 hover:bg-blue-800 lg:ml-2 lg:mt-0 cursor-pointer">
-                {/* <span className="lg:hidden xl:inline">Start </span> */}
-                Free Trial
+              <p className=" block text-sm  px-3 py-2 rounded text-white dark:text-white bg-blue-700 font-bold mt-4 hover:bg-blue-800 lg:ml-2 lg:mt-0 cursor-pointer">
+                <span className="lg:hidden xl:inline">Start </span>Free Trial
               </p>
             </Link>
           </div>
         </div>
       </div>
-    </nav>
+    </nav >
   );
 };

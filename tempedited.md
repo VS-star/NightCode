@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { DarkModeToggle } from "../components/DarkModeToggle";
+import { DarkModeToggle } from "./DarkModeToggle";
 import { blogs } from "../constants";
 import { Languages } from "../constants/Languages";
 
@@ -8,7 +8,7 @@ const SearchBox = () => {
   return (
     <div className="relative mx-auto mt-4 lg:mt-0 text-gray-600 dark:text-gray-600 block">
       <input
-        className="border-2 mr-2 border-gray-300 h-10 w-full lg:w-36 pl-4 pr-2 rounded-full text-sm focus:outline-none bg-gray-300"
+        className="border-2 mr-2 border-gray-300 h-10 w-full lg:w-auto pl-4 pr-2 rounded-full text-sm focus:outline-none bg-gray-300"
         type="search"
         name="search"
         placeholder="Search"
@@ -76,7 +76,7 @@ export const Navbar = ({ currentPage }) => {
         <div className="container mx-auto flex justify-between w-full px-8 pb-5 lg:pb-0 lg:px-0 lg:w-auto">
           <div className="pl-1 lg:pl-0 flex items-center flex-shrink-0 text-gray-800 dark:text-gray-100 cursor-pointer">
             <Link href="/">
-              <img className="w-60" src="/logo.svg"/>
+              <img className="object-fill h-14 w-56" src="/logo.svg"/>
             </Link>
           </div>
           <div
@@ -221,7 +221,7 @@ export const Navbar = ({ currentPage }) => {
                 fillRule="nonzero"
               />
             </svg>
-            <select className="text-sm w-full lg:min-w-max border-2 border-gray-300 rounded-full text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
+            <select className="text-sm min-w-max border-2 border-gray-300 rounded-full text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
               {Languages.map((item, index) => (
                 <option key={index} className="px-4 py-4">
                   {item}
@@ -229,7 +229,7 @@ export const Navbar = ({ currentPage }) => {
               ))}
             </select>
           </div>
-          <div className="mt-2 lg:mt-0 lg:mr-2">
+          <div className="mt-4 lg:mt-0 lg:mr-2">
             <DarkModeToggle />
           </div>
           <div className="hidden lg:block">
@@ -238,13 +238,13 @@ export const Navbar = ({ currentPage }) => {
 
           <div className="text-center lg:flex">
             <Link href="/sign-in">
-              <p className="w-full lg:min-w-max block text-sm  px-3 py-3 dark:text-blue-300 font-bold mt-2 hover:text-blue-700 dark:hover:text-blue-700 lg:mt-0 cursor-pointer">
+              <p className="min-w-max block text-sm  px-3 py-4 dark:text-blue-300 font-bold mt-4 hover:text-blue-700 dark:hover:text-blue-700 lg:mt-0 cursor-pointer">
                 Sign in
               </p>
             </Link>
 
             <Link href="/free-trial">
-              <p className="w-full lg:min-w-max block text-sm  px-3 py-3 rounded text-white dark:text-white bg-blue-700 font-bold mt-2 hover:bg-blue-800 lg:ml-2 lg:mt-0 cursor-pointer">
+              <p className="min-w-max block text-sm  px-3 py-4 rounded text-white dark:text-white bg-blue-700 font-bold mt-4 hover:bg-blue-800 lg:ml-2 lg:mt-0 cursor-pointer">
                 {/* <span className="lg:hidden xl:inline">Start </span> */}
                 Free Trial
               </p>
