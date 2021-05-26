@@ -170,7 +170,7 @@ export const Navbar = ({ currentPage }) => {
                 fillRule="nonzero"
               />
             </svg>
-            <select className=" text-xs w-full lg:min-w-max border-2 border-gray-300 rounded-lg text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
+            <select className=" text-xs w-full lg:w-20 border-2 border-gray-300 rounded-lg text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
               {Languages.map((item, index) => (
                 <option key={index} className="px-4 py-4">
                   {item}
