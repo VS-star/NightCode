@@ -15,7 +15,7 @@ const SearchBox = () => {
       />
       <button
         type="submit"
-        className="absolute right-0 top-0 mt-3 mr-3 lg:mr-4"
+        className="absolute right-0 top-0 mt-3 mr-3 lg:mr-3"
       >
         <svg
           className="text-gray-600 dark:text-gray-600 h-4 w-4 fill-current"
@@ -121,7 +121,7 @@ export const Navbar = ({ currentPage }) => {
               <p
                 className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20   ${
                   navActive === NAV.PAGE_1 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-2 py-5 mr-1 hover:text-blue-700 cursor-pointer  border-b-2 mt-6 `}
+                }block lg:inline-block lg:mt-0 px-2 py-5 mr-2 hover:text-blue-700 cursor-pointer  border-b-2 mt-6 `}
               >
                 Page 1
               </p>
@@ -131,7 +131,7 @@ export const Navbar = ({ currentPage }) => {
                 className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
                   navActive === NAV.PAGE_2 ? "text-blue-700 " : ""
                 }
-                block lg:inline-block lg:mt-0 px-2 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
+                block lg:inline-block lg:mt-0 px-2 py-5 mr-2 hover:text-blue-700 cursor-pointer `}
               >
                 Page 2
               </p>
@@ -140,7 +140,7 @@ export const Navbar = ({ currentPage }) => {
               <p
                 className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
                   navActive === NAV.PAGE_3 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-2 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
+                }block lg:inline-block lg:mt-0 px-2 py-5 mr-2 hover:text-blue-700 cursor-pointer `}
               >
                 Page 3
               </p>
@@ -149,63 +149,12 @@ export const Navbar = ({ currentPage }) => {
               <p
                 className={` lg:py-2 lg:mb-0 ${
                   navActive === NAV.PAGE_4 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-2 py-5 mr-1 hover:text-blue-700 cursor-pointer mb-6`}
+                }block lg:inline-block lg:mt-0 px-2 py-5 mr-4 hover:text-blue-700 cursor-pointer mb-6`}
               >
                 Page 4
               </p>
             </Link>
 
-            {/* <div className=" relative inline-block text-left dropdown">
-              <a href="#" href="#responsive-header">
-                <p
-                  className={`${navActive === NAV.BLOG ? "text-blue-700 " : ""
-                    }block mt-4 lg:inline-block lg:mt-0 px-2 py-2 rounded hover:text-blue-700 cursor-pointer`}
-                >
-                  <span>Blog</span>
-                  <span className="ml-2 font-size inline-block">
-                    {" "}
-                    <svg
-                      xmlns="https://www.w3.org/2000/svg"
-                      className="h-3 w-3"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </span>
-                </p>
-              </a>
-              <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
-                <div className="absolute w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                  <ul className="list-reset">
-                    {blogItems.map((item, index) => (
-                      <li className="relative" key={index}>
-                        <Link href={`/blogs/${item.value}`}>
-                          <div className={`${currentPage === item.value ? 'text-blue-700 ' : ''
-                            }px-4 py-2 inline flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer`}>
-                            <span className="flex-1">{item.name}</span>
-                          </div>
-                        </Link>
-                      </li>
-                    ))}
-                    {-- <li className="relative">
-                      <Link href="/title-1">
-                        <div className={`${currentPage === PAGE.LINK1 ? 'text-blue-700 ' : ''
-                          }px-4 py-2 inline flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer`}>
-                          <span className="flex-1">Blog 1</span>
-                        </div>
-                      </Link>
-                    </li> --}
-                  </ul>
-                </div>
-              </div>
-            </div> */}
           </div>
 
           {/* Edit margin right: lg:mr-2 */}
@@ -221,7 +170,7 @@ export const Navbar = ({ currentPage }) => {
                 fillRule="nonzero"
               />
             </svg>
-            <select className="text-sm w-full lg:min-w-max border-2 border-gray-300 rounded-lg text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
+            <select className=" text-xs w-full lg:min-w-max border-2 border-gray-300 rounded-lg text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
               {Languages.map((item, index) => (
                 <option key={index} className="px-4 py-4">
                   {item}
@@ -229,7 +178,7 @@ export const Navbar = ({ currentPage }) => {
               ))}
             </select>
           </div>
-          <div className="mt-2 lg:mt-0 lg:mr-2">
+          <div className="mt-2 lg:mt-0 lg:mr-0">
             <DarkModeToggle />
           </div>
           <div className="hidden lg:block">
@@ -244,7 +193,7 @@ export const Navbar = ({ currentPage }) => {
             </Link>
 
             <Link href="/free-trial">
-              <p className="w-full lg:min-w-max block text-sm  px-3 py-3 rounded text-white dark:text-white bg-blue-700 font-bold mt-2 hover:bg-blue-800 lg:ml-2 lg:mt-0 cursor-pointer">
+              <p className="w-full lg:min-w-max block text-sm  px-3 py-3 rounded text-white dark:text-white bg-blue-700 font-bold mt-2 hover:bg-blue-800 lg:ml-1 lg:mt-0 cursor-pointer">
                 {/* <span className="lg:hidden xl:inline">Start </span> */}
                 Free Trial
               </p>
