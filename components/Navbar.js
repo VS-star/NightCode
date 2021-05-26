@@ -76,7 +76,7 @@ export const Navbar = ({ currentPage }) => {
         <div className="container mx-auto flex justify-between w-full px-8 pb-5 lg:pb-0 lg:px-0 lg:w-auto">
           <div className="pl-1 lg:pl-0 flex items-center flex-shrink-0 text-gray-800 dark:text-gray-100 cursor-pointer">
             <Link href="/">
-              <img className="w-60" src="/logo.svg"/>
+              <img className="w-72" src="/logo.svg"/>
             </Link>
           </div>
           <div
