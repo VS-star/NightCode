@@ -8,7 +8,7 @@ const SearchBox = () => {
   return (
     <div className="relative mx-auto mt-4 lg:mt-0 text-gray-600 dark:text-gray-600 block">
       <input
-        className="border-2 mr-2 border-gray-300 h-10 w-full lg:w-36 pl-4 pr-2 rounded-lg text-sm focus:outline-none bg-gray-300"
+        className="border-2 mr-1 border-gray-300 h-10 w-full lg:w-36 pl-4 pr-2 rounded-lg text-sm focus:outline-none bg-gray-300"
         type="search"
         name="search"
         placeholder="Search"
@@ -72,7 +72,7 @@ export const Navbar = ({ currentPage }) => {
 
   return (
     <nav className="sticky inset-0 z-20 bg-white dark:bg-gray-900 py-4 shadow border-solid border-t-2 border-blue-700">
-      <div className="w-full lg:container lg:mx-auto lg:flex lg:px-4 items-center justify-between">
+      <div className="w-full lg:container lg:mx-auto lg:flex lg:px-0 items-center justify-between">
         <div className="container mx-auto flex justify-between w-full px-8 pb-5 lg:pb-0 lg:px-0 lg:w-auto">
           <div className="pl-1 lg:pl-0 flex items-center flex-shrink-0 text-gray-800 dark:text-gray-100 cursor-pointer">
             <Link href="/">
@@ -121,7 +121,7 @@ export const Navbar = ({ currentPage }) => {
               <p
                 className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20   ${
                   navActive === NAV.PAGE_1 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer  border-b-2 mt-6 `}
+                }block lg:inline-block lg:mt-0 px-2 py-5 mr-1 hover:text-blue-700 cursor-pointer  border-b-2 mt-6 `}
               >
                 Page 1
               </p>
@@ -131,7 +131,7 @@ export const Navbar = ({ currentPage }) => {
                 className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
                   navActive === NAV.PAGE_2 ? "text-blue-700 " : ""
                 }
-                block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
+                block lg:inline-block lg:mt-0 px-2 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
               >
                 Page 2
               </p>
@@ -140,7 +140,7 @@ export const Navbar = ({ currentPage }) => {
               <p
                 className={` lg:border-b-0 lg:py-2 border-gray-200 border-opacity-20  border-b-2  ${
                   navActive === NAV.PAGE_3 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
+                }block lg:inline-block lg:mt-0 px-2 py-5 mr-1 hover:text-blue-700 cursor-pointer `}
               >
                 Page 3
               </p>
@@ -149,7 +149,7 @@ export const Navbar = ({ currentPage }) => {
               <p
                 className={` lg:py-2 lg:mb-0 ${
                   navActive === NAV.PAGE_4 ? "text-blue-700 " : ""
-                }block lg:inline-block lg:mt-0 px-1 py-5 mr-1 hover:text-blue-700 cursor-pointer mb-6`}
+                }block lg:inline-block lg:mt-0 px-2 py-5 mr-1 hover:text-blue-700 cursor-pointer mb-6`}
               >
                 Page 4
               </p>
