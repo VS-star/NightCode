@@ -3,17 +3,11 @@ import { useEffect, useState } from "react";
 
 export const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
+  const [ isBrowser, setBrowser ] = useState(false)
 
   useEffect(() => {
-      setIsMounted(true);
-  }, []);
-  const switchTheme = () => {
-      if (isMounted) {
-          setTheme(theme === "light" ? "dark" : "light");
-      }
-  };
-
+    setBrowser(true)
+  }, [])
 
   const darkIcon = (
     <svg
@@ -48,15 +42,13 @@ export const DarkModeToggle = () => {
     </svg>
   );
 
-  const currentIcon = theme === "dark" ? lightIcon : darkIcon;
-
   return (
     <div
       className="flex justify-center items-center text-md text-white lg:text-current px-3 w-full h-12 py-2 rounded bg-blue-700 font-bold hover:bg-blue-800 lg:mt-0 lg:bg-transparent lg:hover:bg-transparent cursor-pointer"
       aria-label="dark mode toggle"
-      onClick={switchTheme}
+      onClick={()=>setTheme(theme === "light" ? "dark" : "light")}
     >
-      <div className="w-5 h-5">{currentIcon}</div>
+      <div className="w-5 h-5">{isBrowser && (theme === "light" ? darkIcon : lightIcon)}</div>
     </div>
   );
 };
