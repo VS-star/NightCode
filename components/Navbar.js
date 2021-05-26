@@ -8,7 +8,7 @@ const SearchBox = () => {
   return (
     <div className="relative mx-auto mt-4 lg:mt-0 text-gray-600 dark:text-gray-600 block">
       <input
-        className="border-2 mr-2 border-gray-300 h-10 w-full lg:w-36 pl-4 pr-2 rounded-full text-sm focus:outline-none bg-gray-300"
+        className="border-2 mr-2 border-gray-300 h-10 w-full lg:w-36 pl-4 pr-2 rounded-lg text-sm focus:outline-none bg-gray-300"
         type="search"
         name="search"
         placeholder="Search"
@@ -221,7 +221,7 @@ export const Navbar = ({ currentPage }) => {
                 fillRule="nonzero"
               />
             </svg>
-            <select className="text-sm w-full lg:min-w-max border-2 border-gray-300 rounded-full text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
+            <select className="text-sm w-full lg:min-w-max border-2 border-gray-300 rounded-lg text-gray-600 h-10 pl-2 pr-5 bg-gray-300 hover:border-gray-400 focus:outline-none appearance-none text-last-center">
               {Languages.map((item, index) => (
                 <option key={index} className="px-4 py-4">
                   {item}
