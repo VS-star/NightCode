@@ -20,6 +20,10 @@
 .text-last-center{
   text-align-last: center;
 }
+
+/* ---------------------------------- */
+/* Button width here for "Free Trial" */
+/* ---------------------------------- */
 .trial-button-width{
   min-width: 110px;
 }
